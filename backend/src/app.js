@@ -9,7 +9,7 @@ app.use(express.json())
 // api routes
 
 app.use("/api/auth",authRoute)
-// app.use("/api/music",musicRoute)
+app.use("/api/music",musicRoute)
 
 
 module.exports = app

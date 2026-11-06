@@ -1,1 +1,14 @@
-// const express = require('express')
+const express = require('express')
+const authMiddleware = require('../middlewares/auth.middleware.js')
+const musicController = require('../controllers/music.controller.js')
+
+const router = express.Router();
+
+router.post("/upload",authMiddleware.authArtist,musicController.uploadMusic)
+router.post("/album",authMiddleware.authArtist,musicController.createAlbum)
+
+router.get("/",authMiddleware.authUser,musicController.getAllMusic)
+router.get("/albums",authMiddleware.authUser,musicController.getAllAlbums)
+router.get("/albums/:albumId",authMiddleware.authUser,musicController.getAlbumById)
+
+module.exports = router;

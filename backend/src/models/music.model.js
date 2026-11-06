@@ -1,6 +1,4 @@
-const userModel = require("./user.model")
-
-const mongoose = required("mongoose")
+const mongoose = require("mongoose")
 
 const musicSchema = new mongoose.Schema({
     uri:{
