@@ -12,7 +12,7 @@ const musicSchema = new mongoose.Schema({
     artist:{
         type : mongoose.Schema.Types.ObjectId, //inorder to use populate and fetch all data of the artist in user end
         ref : 'user',
-        require:true
+        required:true
         
     }
 })

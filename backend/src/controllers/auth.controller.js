@@ -13,20 +13,20 @@ async function registerUser(req, res) {
         message: "user already exists"
     })
 
-    const hash = bcrypt.hash(password, 10)
+    const hash = await bcrypt.hash(password, 10)
 
     const user = await userModel.create({
         username, email, password: hash, role
     })
 
-    const token = jwt.sign(({
+    const token = jwt.sign({
         id: user._id,
         role: user.role,
-    }, process.env.JWT_SECRET))
+    }, process.env.JWT_SECRET)
 
     res.cookie("token", token)
 
-    res.status(201), json({
+    res.status(201).json({
         message: "User registerred successfully",
         user: {
             id: user._id,
