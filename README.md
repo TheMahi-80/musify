@@ -1,5 +1,5 @@
 # musify
-A full stack music streaming platform
+A backend music streaming platform
 
 I made this to learn how a real backend works, using Node.js and Express. So far it's only the backend. I'm keeping this README as a note of what I built and what I learned along the way.
 
